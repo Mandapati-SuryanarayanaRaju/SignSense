@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - User List</title>
+  <link rel="shortcut icon" href="../uploads/leaf-svgrepo-com.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100 ">
+  <!-- Navbar -->
+  <nav class="p-4 bg-gray-900 border-b border-gray-400 shadow-md">
+    <div class="flex items-center justify-between max-w-screen-xl px-16 mx-auto text-white">
+        <h1 class="text-2xl font-semibold">
+            <a href="/" class="flex items-center space-x-2 text-white">
+                <span class="text-blue-400">Sign</span><span class="text-yellow-400">Sense</span>
+            </a>
+        </h1>
+        <div class="flex space-x-4">
+            <a href="/" class="px-4 py-2 text-sm bg-blue-700 rounded hover:bg-blue-500">Home</a>
+            <a href="/profile" class="px-4 py-2 text-sm bg-green-700 rounded hover:bg-green-500">Profile</a>
+            <a href="/about" class="px-4 py-2 text-sm bg-yellow-700 rounded hover:bg-yellow-500">About</a>
+            <a href="/config/" class="px-4 py-2 text-sm bg-purple-700 rounded hover:bg-purple-500">Config</a>
+            <% if (user && user.role !== 'user') { %>  
+              <a href="/admin" class="px-4 py-2 text-sm bg-gray-700 rounded hover:bg-gray-500">Admin</a>
+              <% } %>
+            <a href="/logout" class="px-4 py-2 text-sm bg-red-700 rounded hover:bg-red-500">Logout</a>
+        </div>
+    </div>
+</nav>
+
+  <!-- Admin Section: User List -->
+  <section class="max-w-screen-xl px-16 py-8 mx-auto">
+
+    <div class="max-w-screen-xl px-20 py-10 mx-auto mb-20 bg-white rounded shadow">
+      <h1 class="mb-8 text-3xl font-semibold text-gray-800">Admin - User List</h1>
+
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <% users.forEach((user, index) => { %>
+          <div class="flex items-center justify-between p-6 rounded-lg shadow-md bg-gray-50">
+            <div>
+              <h2 class="mb-4 text-2xl font-semibold"><%= index+1 %>. <%= user.name %></h2>
+              <ul class="">
+                <li><span class="font-semibold text-gray-400">Email:</span> <%= user.email %></li>
+                <li><span class="font-semibold text-gray-400">Phone:</span> <%= user.phone %></li>
+                <li><span class="font-semibold text-gray-400">Role:</span> <%= user.role %></li>
+                <li><span class="font-semibold text-gray-400">Gender:</span> <%= user.gender %></li>
+                <li><span class="font-semibold text-gray-400">Location:</span> <%= user.location %></li>
+              </ul>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+    
+  <footer class="fixed bottom-0 w-full p-4 mt-20 text-center text-white bg-gray-900 border-t border-gray-400 shadow-md mt-28">
+    &#169; SignSense
+    </footer>
+
+</body>
+</html>

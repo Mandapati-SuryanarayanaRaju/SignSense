@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="shortcut icon" href="../uploads/leaf-svgrepo-com.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="flex items-center justify-center w-full py-10 text-white bg-gray-900 bg-[url('https://i.pinimg.com/736x/48/40/0d/48400da4ba81a3a531fbb61519114b8a.jpg')] bg-cover bg-center bg-no-repeat">
+
+  <div class="w-full max-w-lg p-8 my-20 bg-gray-900/60 backdrop-blur-lg border border-gray-600/40 rounded-lg shadow-2xl">
+    <h1 class="mb-6 text-2xl font-semibold text-center text-white">Register</h1>
+    <form action="/register" method="POST" class="space-y-4">
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-300">Name:</label>
+        <input type="text" id="name" name="name" required class="block w-full px-3 py-2 mt-1 text-white placeholder-gray-400 bg-gray-700/60 border border-gray-600/50 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm">
+      </div>
+      <div>
+        <label for="phone" class="block text-sm font-medium text-gray-300">Phone:</label>
+        <input type="text" id="phone" name="phone" required class="block w-full px-3 py-2 mt-1 text-white placeholder-gray-400 bg-gray-700/60 border border-gray-600/50 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm">
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-300">Email:</label>
+        <input type="email" id="email" name="email" required class="block w-full px-3 py-2 mt-1 text-white placeholder-gray-400 bg-gray-700/60 border border-gray-600/50 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm">
+      </div>
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-300">Password:</label>
+        <input type="password" id="password" name="password" required class="block w-full px-3 py-2 mt-1 text-white placeholder-gray-400 bg-gray-700/60 border border-gray-600/50 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm">
+      </div>
+      <div>
+        <label for="gender" class="block text-sm font-medium text-gray-300">Gender:</label>
+        <select id="gender" name="gender" required class="block w-full px-3 py-2 mt-1 text-white placeholder-gray-400 bg-gray-700/60 border border-gray-600/50 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm">
+          <option value="" disabled selected>Select your gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="location" class="block text-sm font-medium text-gray-300">Location:</label>
+        <input type="text" id="location" name="location" required class="block w-full px-3 py-2 mt-1 text-white placeholder-gray-400 bg-gray-700/60 border border-gray-600/50 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm">
+      </div>
+      <button type="submit" class="w-full py-3 text-white transition-colors bg-pink-700 rounded-md hover:bg-pink-600">Register</button>
+    </form>
+    <p class="mt-4 text-sm text-center text-gray-400">
+      <a href="/login" class="text-pink-400 hover:text-pink-300">Already have an account? Login here.</a>
+    </p>
+  </div>
+
+</body>
+</html>
