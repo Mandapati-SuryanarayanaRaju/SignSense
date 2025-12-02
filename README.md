@@ -17,29 +17,37 @@
 
 ## 🚀 Getting Started  
 
+### 0️⃣ Prerequisites  
+- **Node.js 18+** (includes npm)  
+- **MySQL 8+** running locally or accessible via network  
+
 ### 1️⃣ Clone the Repository  
 ```sh
 git clone https://github.com/yourusername/signsense.git  
 cd signsense
 ```
 
-### 2️⃣ Setup Database Credentials
+### 2️⃣ Install Dependencies  
 ```sh
-const mysql = require('mysql2');
-
-const db = mysql
-  .createPool({
-    host: 'localhost',
-    user: 'username',
-    password: 'password',
-    database: 'databasename',
-  })
-  .promise();
-
-module.exports = db;
+npm install
 ```
 
-### 3️⃣ Setup Database
+### 3️⃣ Configure Environment Variables  
+Create a `.env` file in the project root (same level as `app.js`) and add the following keys:
+
+```
+PORT=3000
+RAPIDAPI_KEY=replace-with-rapidapi-key
+GEMINI_API_KEY=replace-with-google-gemini-key
+```
+
+- `PORT` – HTTP port Express listens on.  
+- `RAPIDAPI_KEY` – authentication token for RapidAPI calls.  
+- `GEMINI_API_KEY` – Google Generative AI key used in `controllers/gestureController.js`.  
+
+> ℹ️ Database credentials currently live in `config/db.js`. Update that file if your MySQL host/user/password differ.
+
+### 4️⃣ Setup Database
 ```sh
 -- Create the 'users' table
 CREATE TABLE users (
@@ -52,7 +60,7 @@ CREATE TABLE users (
 );
 ```
 
-### 4️⃣ Start the Server
+### 5️⃣ Start the Server
 ```sh
 node app.js
 ```
